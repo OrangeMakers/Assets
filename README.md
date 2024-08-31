@@ -52,9 +52,59 @@ Dette projekt udvikles ved hjælp af følgende teknologier:
 - **API**: Azure Functions baseret på Node.js og TypeScript til alle API-kald
 - **Byggeværktøj**: Vite for hurtig udvikling og optimeret produktion
 - **Dokumentation**: Markdown-filer gemt på GitHub
-- **Styling**: CSS modules for komponent-specifik styling
+- **Styling**: Tailwind CSS for konsistent og skalerbar design på tværs af hele løsningen
 - **Linting og Formattering**: ESLint og TypeScript ESLint for kodestandard og -kvalitet
 - **Versionsstyring**: Git og GitHub for kildekode og samarbejde
+
+## Design Framework
+
+For at sikre en konsistent og skalerbar designløsning på tværs af hele projektet, bruger vi Tailwind CSS. Tailwind er et utility-first CSS framework, der giver os mulighed for at opbygge brugerdefinerede designs uden at forlade vores HTML.
+
+### Implementering af Tailwind CSS
+
+1. Installer Tailwind CSS og dets afhængigheder:
+   ```
+   npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+   ```
+
+2. Generer Tailwind konfigurationsfilen:
+   ```
+   npx tailwindcss init -p
+   ```
+
+3. Konfigurer dine template paths i `tailwind.config.js`:
+   ```javascript
+   module.exports = {
+     content: [
+       "./src/**/*.{js,ts,jsx,tsx}",
+     ],
+     theme: {
+       extend: {},
+     },
+     plugins: [],
+   }
+   ```
+
+4. Tilføj Tailwind directives til din hovedstylsheet fil (f.eks. `src/styles/globals.css`):
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
+
+5. Importer din hovedstylsheet fil i `src/main.tsx`:
+   ```typescript
+   import './styles/globals.css'
+   ```
+
+6. Brug Tailwind klasser i dine komponenter:
+   ```jsx
+   <div className="bg-blue-500 text-white p-4 rounded-lg shadow-md">
+     Dette er et eksempel på en Tailwind-stylet div
+   </div>
+   ```
+
+Ved at bruge Tailwind CSS kan vi nemt opretholde en konsistent designsprog på tværs af hele applikationen, samtidig med at vi bevarer fleksibiliteten til at tilpasse designet efter behov.
 
 ## Projektstruktur
 
