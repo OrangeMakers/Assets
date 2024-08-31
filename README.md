@@ -23,19 +23,15 @@ Formålet med dette system er at:
 
 Dette projekt vil blive udviklet ved hjælp af følgende teknologier (placeholder - skal opdateres):
 
-- Backend: [Indsæt backend-teknologi]
-- Database: [Indsæt database-teknologi]
-- Frontend: [Indsæt frontend-teknologi, hvis relevant]
-- API: [Indsæt API-teknologi]
-- Dokumentation: [Indsæt dokumentationsværktøj]
+- Backend: Azure Static WebApp til at styre app, både statisk web app og adgang til API
+- Database: Azure Cosmos DB med med NoSQL interface
+- Frontend: Next JS, med React
+- API: Azure Function app baseret på Node.JS til alle api kald
+- Dokumentation: Markdown filer der ligger på Github
 
 ## Projektstruktur
 
-- `/src`: Kildekode
-- `/docs`: Projektdokumentation
-- `/api`: API-specifikationer og -implementering
-- `/tests`: Testfiler
-- `/scripts`: Hjælpescripts og værktøjer
+[Indsæt senere]
 
 ## Kom i gang
 
@@ -47,4 +43,4 @@ Dette projekt vil blive udviklet ved hjælp af følgende teknologier (placeholde
 
 ## Licens
 
-[Indsæt licensinformation]
+Find en relevant Opensource licens der passer til et makerspace
