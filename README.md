@@ -9,15 +9,38 @@ Formålet med dette system er at:
 2. Dele data med vores hjemmeside via et eksternt API
 3. Implementere en digital log for brug af udstyr
 4. Strukturere og organisere dokumentation, manualer og instruktioner for vores udstyr
+5. Tilbyde en offentlig visning af vores udstyr og faciliteter
+6. Muliggøre effektiv administration og vedligeholdelse af vores assets
 
-## Hovedfunktioner
+## Funktioner og Struktur
 
-- **Udstyrsregistrering**: En database over alle maskiner, værktøjer og andet udstyr
-- **Rumoversigt**: Information om forskellige sektioner og rum i vores makerspace
-- **Materialelager**: Oversigt over tilgængelige materialer
-- **Digital Log**: Registrering af udstyrsanvendelse og vedligeholdelse
-- **Dokumentationsbibliotek**: Struktureret opbevaring af manualer, instruktioner og anden dokumentation
-- **API Integration**: Deling af relevante data med vores hjemmeside
+Systemet består af flere hovedkomponenter:
+
+### 1. Lukket Administrationssystem
+- **Asset Management**: Et omfattende system til at oprette og administrere assets med al relevant data, herunder:
+  - Guides og manualer
+  - Billeder
+  - Placering i makerspace
+  - Ansvarlige personer
+  - Vedligeholdelseshistorik
+  - Tilknyttede instruktioner og dokumenter
+
+### 2. Offentlig Visning
+- **Tile-baseret Forside**: En offentligt tilgængelig side uden krav om autentifikation
+  - Viser og filtrerer alt udstyr
+  - Præsenterer relevante oplysninger til offentlig brug
+  - Fungerer som applikationens "forside"
+
+### 3. Mobil-venlig Asset Side
+- **Unik URL for hvert Asset**: En "skjult" side med en lang, unik URL for hvert asset
+  - Mobil-optimeret visning
+  - Mulighed for at rapportere problemer med udstyret
+  - Check-in funktion for brugere
+
+### 4. API Integration
+- **Ekstern API**: Eksponerer relevante informationer om maskinerne
+  - Kan integreres direkte i vores hjemmeside
+  - Tillader deling af data med andre systemer
 
 ## Teknologier
 
@@ -39,10 +62,12 @@ Dette projekt udvikles ved hjælp af følgende teknologier:
   - `/assets`: Statiske filer som billeder og ikoner
   - `/components`: React-komponenter
   - `/styles`: CSS-filer og stilark
+  - `/pages`: Komponenter for hovedsider (Admin, Public View, Asset Page)
+  - `/services`: API-integrationer og databehandling
 - `/api`: Azure Functions for API-endpoints
 - `/public`: Offentligt tilgængelige filer
-- `/docs`: Projektdokumentation og brugermanualer (planlagt)
-- `/tests`: Testfiler for både frontend og backend (planlagt)
+- `/docs`: Projektdokumentation og brugermanualer
+- `/tests`: Testfiler for både frontend og backend
 
 ## Kom i gang
 
@@ -69,7 +94,13 @@ npm run lint
 
 ## API Endpoints
 
-Projektet inkluderer en simpel "Hello World" Azure Function, som kan findes i `api/src/functions/helloWorld.ts`. Denne funktion kan kaldes via HTTP GET eller POST og returnerer en hilsen.
+Projektet inkluderer flere Azure Functions for at håndtere forskellige aspekter af systemet:
+- Asset oprettelse og redigering
+- Offentlig data hentning
+- Problemrapportering
+- Check-in/ud funktionalitet
+
+Detaljeret API-dokumentation vil blive tilføjet i `/docs/api.md`.
 
 ## Bidrag
 
@@ -88,8 +119,11 @@ Sørg for at følge vores kodestandarder og kør tests før du indsender en pull
 - Implementere Azure Cosmos DB integration
 - Tilføje flere Azure Functions for CRUD-operationer
 - Udvikle en mere omfattende frontend med flere komponenter
-- Implementere autentifikation og autorisation
-- Tilføje unit tests og integrationstest
+- Implementere autentifikation og autorisation for admin-sektionen
+- Tilføje avancerede søge- og filtreringsfunktioner i den offentlige visning
+- Implementere et booking-system for udvalgt udstyr
+- Tilføje statistik og brugsanalyse for assets
+- Udvikle en mobilapp for nem adgang til asset-information og check-in
 
 ## Udvidelse af ESLint-konfiguration
 
