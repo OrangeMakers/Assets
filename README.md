@@ -94,3 +94,5 @@ Sørg for at følge vores kodestandarder og kør tests før du indsender en pull
 ## Licens
 
 Dette projekt er licenseret under MIT-licensen. Se [LICENSE](LICENSE) filen for detaljer.
+
+Copyright (c) 2024 Makerspace Asset Management System
