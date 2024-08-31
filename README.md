@@ -23,20 +23,26 @@ Formålet med dette system er at:
 
 Dette projekt udvikles ved hjælp af følgende teknologier:
 
-- Backend: Azure Static Web Apps til at hoste applikationen og håndtere API-adgang
-- Database: Azure Cosmos DB med NoSQL-interface
-- Frontend: Next.js med React
-- API: Azure Functions baseret på Node.js til alle API-kald
-- Dokumentation: Markdown-filer gemt på GitHub
+- **Backend**: Azure Static Web Apps til at hoste applikationen og håndtere API-adgang
+- **Database**: Azure Cosmos DB med NoSQL-interface (planlagt, ikke implementeret endnu)
+- **Frontend**: React med TypeScript
+- **API**: Azure Functions baseret på Node.js og TypeScript til alle API-kald
+- **Byggeværktøj**: Vite for hurtig udvikling og optimeret produktion
+- **Dokumentation**: Markdown-filer gemt på GitHub
+- **Styling**: CSS modules for komponent-specifik styling
+- **Linting og Formattering**: ESLint og TypeScript ESLint for kodestandard og -kvalitet
+- **Versionsstyring**: Git og GitHub for kildekode og samarbejde
 
 ## Projektstruktur
 
-- `/src`: Kildekode for frontend og backend
-  - `/frontend`: Next.js applikation
-  - `/api`: Azure Functions for API-endpoints
-- `/docs`: Projektdokumentation og brugermanualer
-- `/scripts`: Hjælpescripts og værktøjer
-- `/tests`: Testfiler for både frontend og backend
+- `/src`: Kildekode for frontend
+  - `/assets`: Statiske filer som billeder og ikoner
+  - `/components`: React-komponenter
+  - `/styles`: CSS-filer og stilark
+- `/api`: Azure Functions for API-endpoints
+- `/public`: Offentligt tilgængelige filer
+- `/docs`: Projektdokumentation og brugermanualer (planlagt)
+- `/tests`: Testfiler for både frontend og backend (planlagt)
 
 ## Kom i gang
 
@@ -45,14 +51,25 @@ Dette projekt udvikles ved hjælp af følgende teknologier:
    ```
    npm install
    ```
-3. Konfigurer Azure-tjenester (Static Web Apps, Cosmos DB, Functions)
-4. Start udviklings-serveren:
+3. Start udviklings-serveren:
    ```
    npm run dev
    ```
-5. Åbn `http://localhost:3000` i din browser
+4. Åbn `http://localhost:5173` i din browser
 
-For mere detaljerede instruktioner, se vores [Udviklerdokumentation](docs/developer-guide.md).
+For at bygge projektet til produktion:
+```
+npm run build
+```
+
+For at køre linting:
+```
+npm run lint
+```
+
+## API Endpoints
+
+Projektet inkluderer en simpel "Hello World" Azure Function, som kan findes i `api/src/functions/helloWorld.ts`. Denne funktion kan kaldes via HTTP GET eller POST og returnerer en hilsen.
 
 ## Bidrag
 
@@ -64,7 +81,15 @@ Vi værdsætter bidrag fra vores community! Hvis du ønsker at bidrage til proje
 4. Push dine ændringer til din fork
 5. Opret en pull request med en beskrivelse af dine ændringer
 
-For mere information, se vores [Bidragsguide](CONTRIBUTING.md).
+Sørg for at følge vores kodestandarder og kør tests før du indsender en pull request.
+
+## Fremtidige Planer
+
+- Implementere Azure Cosmos DB integration
+- Tilføje flere Azure Functions for CRUD-operationer
+- Udvikle en mere omfattende frontend med flere komponenter
+- Implementere autentifikation og autorisation
+- Tilføje unit tests og integrationstest
 
 ## Licens
 
