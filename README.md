@@ -58,16 +58,31 @@ Dette projekt udvikles ved hjælp af følgende teknologier:
 
 ## Projektstruktur
 
+- `/`: Rodmappe med konfigurationsfiler
+  - `.gitignore`: Git-ignorerede filer
+  - `package.json` og `package-lock.json`: NPM-pakkeadministration
+  - `tsconfig.json`, `tsconfig.app.json`, `tsconfig.node.json`: TypeScript-konfiguration
+  - `vite.config.ts`: Vite byggeværktøj konfiguration
+  - `eslint.config.js`: ESLint konfiguration
+  - `swa-cli.config.json`: Azure Static Web Apps CLI konfiguration
 - `/src`: Kildekode for frontend
-  - `/assets`: Statiske filer som billeder og ikoner
-  - `/components`: React-komponenter
-  - `/styles`: CSS-filer og stilark
-  - `/pages`: Komponenter for hovedsider (Admin, Public View, Asset Page)
-  - `/services`: API-integrationer og databehandling
+  - `/assets`: Statiske filer som billeder og ikoner (f.eks. `react.svg`)
+  - `/components`: React-komponenter (skal implementeres)
+  - `/styles`: CSS-filer og stilark (f.eks. `App.css`, `index.css`)
+  - `/pages`: Komponenter for hovedsider (Admin, Public View, Asset Page) (skal implementeres)
+  - `/services`: API-integrationer og databehandling (skal implementeres)
+  - `App.tsx`: Hoved React-komponent
+  - `main.tsx`: Indgangspunkt for React-applikationen
+  - `vite-env.d.ts`: TypeScript-deklarationsfil for Vite
 - `/api`: Azure Functions for API-endpoints
-- `/public`: Offentligt tilgængelige filer
-- `/docs`: Projektdokumentation og brugermanualer
-- `/tests`: Testfiler for både frontend og backend
+  - `host.json`: Konfigurationsfil for Azure Functions
+  - `package.json` og `package-lock.json`: NPM-pakkeadministration for API
+  - `tsconfig.json`: TypeScript-konfiguration for API
+  - `.funcignore` og `.gitignore`: Ignorerede filer for Azure Functions og Git
+  - `/src/functions`: Azure Functions-kode (f.eks. `helloWorld.ts`)
+- `/public`: Offentligt tilgængelige filer (f.eks. `vite.svg`)
+- `/docs`: Projektdokumentation og brugermanualer (skal implementeres)
+- `/tests`: Testfiler for både frontend og backend (skal implementeres)
 
 ## Kom i gang
 
