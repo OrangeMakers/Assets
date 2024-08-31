@@ -91,6 +91,45 @@ Sørg for at følge vores kodestandarder og kør tests før du indsender en pull
 - Implementere autentifikation og autorisation
 - Tilføje unit tests og integrationstest
 
+## Udvidelse af ESLint-konfiguration
+
+For at forbedre linting i produktionsapplikationer anbefales følgende opdateringer til ESLint-konfigurationen:
+
+1. Konfigurer `parserOptions` i `eslint.config.js`:
+
+```js
+export default tseslint.config({
+  languageOptions: {
+    // andre indstillinger...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
+
+2. Erstat `tseslint.configs.recommended` med `tseslint.configs.recommendedTypeChecked` eller `tseslint.configs.strictTypeChecked`
+3. Tilføj eventuelt `...tseslint.configs.stylisticTypeChecked`
+4. Installer [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) og opdater konfigurationen:
+
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
+
+export default tseslint.config({
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    react,
+  },
+  rules: {
+    // andre regler...
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```
+
 ## Licens
 
 Dette projekt er licenseret under MIT-licensen. Se [LICENSE](LICENSE) filen for detaljer.
