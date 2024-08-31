@@ -1,6 +1,6 @@
 # Makerspace Asset Management System
 
-Dette projekt er et centraliseret system til at administrere og dele information om vores makerspace's udstyr, rum, og materialer.
+Dette projekt er et centraliseret system til at administrere og dele information om vores makerspace's udstyr, rum og materialer.
 
 ## Formål
 
@@ -21,26 +21,51 @@ Formålet med dette system er at:
 
 ## Teknologier
 
-Dette projekt vil blive udviklet ved hjælp af følgende teknologier (placeholder - skal opdateres):
+Dette projekt udvikles ved hjælp af følgende teknologier:
 
-- Backend: Azure Static WebApp til at styre app, både statisk web app og adgang til API
-- Database: Azure Cosmos DB med med NoSQL interface
-- Frontend: Next JS, med React
-- API: Azure Function app baseret på Node.JS til alle api kald
-- Dokumentation: Markdown filer der ligger på Github
+- Backend: Azure Static Web Apps til at hoste applikationen og håndtere API-adgang
+- Database: Azure Cosmos DB med NoSQL-interface
+- Frontend: Next.js med React
+- API: Azure Functions baseret på Node.js til alle API-kald
+- Dokumentation: Markdown-filer gemt på GitHub
 
 ## Projektstruktur
 
-[Indsæt senere]
+- `/src`: Kildekode for frontend og backend
+  - `/frontend`: Next.js applikation
+  - `/api`: Azure Functions for API-endpoints
+- `/docs`: Projektdokumentation og brugermanualer
+- `/scripts`: Hjælpescripts og værktøjer
+- `/tests`: Testfiler for både frontend og backend
 
 ## Kom i gang
 
-[Indsæt instruktioner om, hvordan man sætter projektet op og kommer i gang med at bruge det]
+1. Klon dette repository
+2. Installer de nødvendige afhængigheder:
+   ```
+   npm install
+   ```
+3. Konfigurer Azure-tjenester (Static Web Apps, Cosmos DB, Functions)
+4. Start udviklings-serveren:
+   ```
+   npm run dev
+   ```
+5. Åbn `http://localhost:3000` i din browser
+
+For mere detaljerede instruktioner, se vores [Udviklerdokumentation](docs/developer-guide.md).
 
 ## Bidrag
 
-[Indsæt information om, hvordan andre kan bidrage til projektet]
+Vi værdsætter bidrag fra vores community! Hvis du ønsker at bidrage til projektet, følg venligst disse trin:
+
+1. Fork dette repository
+2. Opret en ny branch for din feature eller fejlrettelse
+3. Lav dine ændringer og commit dem
+4. Push dine ændringer til din fork
+5. Opret en pull request med en beskrivelse af dine ændringer
+
+For mere information, se vores [Bidragsguide](CONTRIBUTING.md).
 
 ## Licens
 
-Find en relevant Opensource licens der passer til et makerspace
+Dette projekt er licenseret under MIT-licensen. Se [LICENSE](LICENSE) filen for detaljer.
